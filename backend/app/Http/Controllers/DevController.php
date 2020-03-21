@@ -114,5 +114,8 @@ class DevController extends Controller
     public function destroy($id)
     {
         //
+        $Dev = Dev::find($id);
+        $Dev->delete();
+        return response()->json(['data'=>$Dev, 'status'=>true]);
     }
 }
